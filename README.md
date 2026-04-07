@@ -1,85 +1,124 @@
-Expense Split System
-Project Description
+💰 Expense Split Application
 
-Expense Split is a Spring Boot backend application designed to manage and track shared expenses among users or groups.
-It allows users to add expenses, split costs between participants, and calculate balances automatically.
-The system ensures transparent expense tracking and simplifies settlements between users.
+A full-stack web application to manage and split expenses among groups, similar to Splitwise. This project is built using Spring Boot (Backend) and HTML, CSS, JavaScript (Frontend).
 
-Features
+🚀 Features
+👤 User Management
+Create and manage users
+👥 Group Management
+Create groups and add members
+💸 Expense Management
+Add expenses within groups
+Split expenses among members
+🔄 Settlement System
+Track balances
+Settle debts between users
+📊 Net Balance Calculation
+Optimized settlement logic to minimize transactions
+🛠️ Tech Stack
 
-1.Add and manage users
-2.Create and track shared expenses
-3.Split expenses among multiple participants
-4.Automatic balance calculation
-5.Track who owes whom
-
-RESTful APIs for expense operations
-MySQL database integration
-Clean layered architecture (Controller → Service → Repository)
-
-Tech Stack-
-Backend
+🔹 Backend
 Java
 Spring Boot
+Spring Web
 Spring Data JPA
-Hibernate
-Database
-MySQL
+REST APIs
+🔹 Frontend
+HTML
+CSS
+JavaScript
+🔹 Database
+(Configured via application.properties, likely MySQL or H2)
 
-Tools-
-IntelliJ IDEA
-Postman
-Git & GitHub
-Maven
+⚙️ Backend Architecture
 
-Project Architecture
+The backend follows a layered architecture:
 
-The project follows a layered architecture:
+1. Controller Layer
 
-Controller Layer
-        ↓
-Service Layer
-        ↓
-Repository Layer
-        ↓
-Database (MySQL)
+Handles HTTP requests:
 
-This structure improves maintainability, scalability, and code readability.
+UserController
+GroupController
+ExpensesController
+TransactionController
+2. Service Layer
 
-Database Tables
+Contains business logic:
 
-Main tables used in the system:
+Expense splitting logic
+Balance calculation
+Settlement optimization
+3. Repository Layer
+Uses Spring Data JPA
+Interfaces for database operations
+4. Entity Layer
 
-Users – Stores user details
+Main entities:
+User
+Group
+Expenses
+Split
+Transactions
+Members
 
-Expenses – Stores expense information
+5. DTOs
+Request & Response objects
+Clean API structure
 
-Expense Split – Tracks how expenses are divided between users
-
-API Endpoints
-User APIs
-Method	Endpoint	Description
-POST	/users	Create new user
-GET	/users	Get all users
-GET	/users/{id}	Get user by ID
-Expense APIs
-Method	Endpoint	Description
-POST	/expenses	Add new expense
-GET	/expenses	Get all expenses
-GET	/expenses/{id}	Get expense details
-Expense Split APIs
-Method	Endpoint	Description
-POST	/split	Split an expense
-GET	/balances	View balances between users
+6. Exception Handling
+Global exception handler
+Custom exceptions:
+UserNotFoundException
+GroupNotFoundException
+SplitNotFoundException
 
 
-Authentication & Authorization (JWT)
-Group expense management
-Expense settlement feature
-Frontend integration (React)
+🔗 API Endpoints (Overview)
+👤 User APIs
+Create User
+Get Users
+👥 Group APIs
+Create Group
+Add Members
+Get Group Details
+💸 Expense APIs
+Add Expense
+Split Expense
+Get Expense Details
+🔄 Transaction APIs
+Settle Payments
+Get Balance Summary
+🧠 Core Logic
+Expense Splitting
+Equal split among group members
+Tracks who owes whom
+Net Settlement
+Minimizes number of transactions
+Converts multiple debts into optimized payments
+▶️ How to Run the Project
 
-Author
-Chandrashekhar Chinta
+🔹 Backend
+Navigate to project folder:
+cd Expense-Split
+Run Spring Boot app:
+mvn spring-boot:run
+Server runs at:
+http://localhost:8080
 
-Java Backend Developer
-Spring Boot | Java | MySQL | REST APIs
+🔹 Frontend
+Open index.html in browser
+OR
+Serve using Live Server (recommended)
+🧪 Testing
+Postman collection available in project
+Test all APIs using provided endpoints
+📌 Future Enhancements
+🔐 Authentication & Authorization (JWT)
+📱 Mobile responsive UI improvements
+📊 Advanced analytics (charts)
+📧 Notifications & reminders
+💳 Payment integration
+🤝 Contribution
+
+Feel free to fork this repository and contribute!
